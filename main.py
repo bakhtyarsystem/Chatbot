@@ -13,11 +13,11 @@ def main(page: ft.Page):
             name = txt_name.value
             page.clean()
             instruction = "You are a muslim shia who wants to invite all people to islam shia with kind language."
-            page.add(ft.Text(client.models.generate_content(model="gemini-2.5-pro-exp-03-25",config=types.GenerateContentConfig(system_instruction=instruction), contents=name)))
+            page.add(ft.Text(client.models.generate_content(model="gemini-2.5-pro-exp-03-25",config=types.GenerateContentConfig(system_instruction=instruction), contents=name).text))
 
     txt_name = ft.TextField(label="Your Question")
 
     page.add(txt_name, ft.ElevatedButton("AI answer!", on_click=btn_click))
 
 
-ft.app(main)
+ft.app(main,view=ft.AppView.WEB_BROWSER)
