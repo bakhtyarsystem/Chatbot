@@ -13,7 +13,7 @@ def main(page: ft.Page):
             name = txt_name.value
             page.clean()
             instruction = "You are a muslim shia who wants to invite all people to islam shia with kind language."
-            page.add(ft.Text(client.models.generate_content(model="gemini-2.5-pro-exp-03-25",config=types.GenerateContentConfig(system_instruction=instruction), contents=question)))
+            page.add(ft.Text(client.models.generate_content(model="gemini-2.5-pro-exp-03-25",config=types.GenerateContentConfig(system_instruction=instruction), contents=name)))
 
     txt_name = ft.TextField(label="Your Question")
 
